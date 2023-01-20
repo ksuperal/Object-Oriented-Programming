@@ -113,7 +113,7 @@ void vertical_frame_dash(string p1, string p2){
             }
             else{
                 if (r == 0 || r == rows - 5 || r == rows - 1){
-                    if( (c == 0 && r == 0) || (c == cols - 1 && r == 0) || (c == 0 && r == rows - 1) || (c == cols - 1 && r == rows - 1)){
+                    if( (c == 0 && r == 0) || (c == cols - 1 && r == 0) || (c == 0 && r == rows - 1) || (c == cols - 1 && r == rows - 1) || (c == 0 && r == 4) || (c == cols - 1 && r == 4)){
                         cout << "+";
                     }
                     else{
@@ -166,7 +166,7 @@ void horizontal_frame_equalontop(string p1, string p2){
             }
             else{
                 if (r == 0 || r == rows - 5 || r == rows - 1){
-                    if( (c == 0 && r == 0) || (c == cols - 1 && r == 0) || (c == 0 && r == rows - 1) || (c == cols - 1 && r == rows - 1)){
+                    if( (c == 0 && r == 0) || (c == cols - 1 && r == 0) || (c == 0 && r == rows - 1) || (c == cols - 1 && r == rows - 1) || (c == 0 && r == 4) || (c == cols - 1 && r == 4)){
                         cout << "+";
                     }
                     else if (r == 0 || r == rows - 1){

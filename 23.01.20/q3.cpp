@@ -53,7 +53,7 @@ void drawstar_accending_decending_left(int n){
 
 int main(){
     string size;
-    cout << "Enter the size of the square: ";
+    cout << "Enter the size: ";
     cin >> size;
     int n = stoi(size);
     // drawstar_pattern(n);
