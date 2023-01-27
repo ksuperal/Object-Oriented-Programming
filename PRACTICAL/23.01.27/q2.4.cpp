@@ -1,4 +1,5 @@
 #include "style.hpp"
+#include <fstream>
 
 auto split(string m, char d){
     std::vector<string> result;
@@ -20,12 +21,27 @@ int main(){
     std::getline(cin, m);
     auto words = split(m, ' ');
 
-    cout << std::setw(15) << std::left << " " << std::setw(15) << std::left << "unstylize" << std::setw(15) << std::left << "stylize" << endl;
+    std::ofstream out("out2.html");
+    std::streambuf *coutbuf = std::cout.rdbuf();
+    std::cout.rdbuf(out.rdbuf());
+
+    cout << "<table>" << endl;
+    cout << "<tr>" << endl;
+    cout << "<th></th>" << endl;
+    cout << "<th>Unstylized</th>" << endl;
+    cout << "<th>Stylized</th>" << endl;
+    cout << "</tr>" << endl;
 
     for (const auto& w: words) {
         // std::cout << unstylize(w) << std::endl;
-        cout << std::setw(15) << std::left << w << std::setw(15) << std::left << STYLE::unstylize(w) << std::setw(15) << std::left << STYLE::stylize(w) << endl;
+        cout << "<tr>" << endl;
+        cout << "<td>" << w << "</td>" << endl;
+        cout << "<td>" << STYLE::unstylize(w) << "</td>" << endl;
+        cout << "<td>" << STYLE::stylize(w) << "</td>" << endl;
+        cout << "</tr>" << endl;
     }
+
+    cout << "</table>" << endl;
     
 
 }

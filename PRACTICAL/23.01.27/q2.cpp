@@ -47,24 +47,24 @@ auto split(string m, char d){
 }
 
 int main(){
-    // auto words = {"C", "**", "*C++*", "*Java", "*Python*", "Rust*"};
-    // for (const auto& w: words) {
-    //     // std::cout << unstylize(w) << std::endl;
-    //     std::cout << stylize(w) << std::endl;
-    // }
-    // C *C++* Rust* *Python* * *Java
-
-    string m;
-    cout << "Enter the string: ";
-    std::getline(cin, m);
-    auto words = split(m, ' ');
-
-    cout << std::setw(15) << std::left << " " << std::setw(15) << std::left << "unstylize" << std::setw(15) << std::left << "stylize" << endl;
-
+    auto words = {"C", "**", "*C++*", "*Java", "*Python*", "Rust*"};
     for (const auto& w: words) {
         // std::cout << unstylize(w) << std::endl;
-        cout << std::setw(15) << std::left << w << std::setw(15) << std::left << unstylize(w) << std::setw(15) << std::left << stylize(w) << endl;
+        std::cout << stylize(w) << std::endl;
     }
+    // C *C++* Rust* *Python* * *Java
+
+    // string m;
+    // cout << "Enter the string: ";
+    // std::getline(cin, m);
+    // auto words = split(m, ' ');
+
+    // cout << std::setw(15) << std::left << " " << std::setw(15) << std::left << "unstylize" << std::setw(15) << std::left << "stylize" << endl;
+
+    // for (const auto& w: words) {
+    //     // std::cout << unstylize(w) << std::endl;
+    //     cout << std::setw(15) << std::left << w << std::setw(15) << std::left << unstylize(w) << std::setw(15) << std::left << stylize(w) << endl;
+    // }
     
 
 }
