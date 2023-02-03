@@ -36,8 +36,12 @@ void print_words(const vector<string>& words, std::ostream& out){
 }
 
 void print_words_commas(const vector<string>& words, std::ostream& out){
-    for (const auto& w: words){
-        out << w << ", ";
+    int n = words.size();
+    for (int i = 0; i < n; i++){
+        out << words[i];
+        if (i < n - 1){
+            out << ", ";
+        }
     }
 }
 
