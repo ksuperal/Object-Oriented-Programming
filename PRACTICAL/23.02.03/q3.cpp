@@ -17,7 +17,7 @@ using std::istream;
 using std::vector;
 using std::sort;
 
-auto print_words(std::ostream& out, const vector<string>& words){
+void print_words(std::ostream& out, const vector<string>& words){
     for (const auto& w: words){
         out << w << endl;
     }
