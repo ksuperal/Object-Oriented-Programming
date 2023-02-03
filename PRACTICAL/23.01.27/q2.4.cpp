@@ -21,7 +21,7 @@ int main(){
     std::getline(cin, m);
     auto words = split(m, ' ');
 
-    std::ofstream out("out2.html");
+    std::ofstream out("test.html");
     std::streambuf *coutbuf = std::cout.rdbuf();
     std::cout.rdbuf(out.rdbuf());
 
