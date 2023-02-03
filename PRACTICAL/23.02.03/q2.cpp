@@ -76,7 +76,7 @@ std::ostream& print_words_commas_new(std::ostream& out, const vector<string>& wo
 int main()
 {
     cout << endl;
-    cout << "=====================2.3=====================" << endl;
+    cout << "=====================2.1=====================" << endl;
     const vector<string> test_words{
     "switch", "[[noreturn]]",
     "if", "[[maybe_unused",
@@ -97,6 +97,7 @@ int main()
 
 
     cout << endl;
+    cout << "=====================2.2=====================" << endl;
     cout << "Test words: ";
     print_words_commas(test_words, cout);
     cout << endl;
@@ -108,7 +109,7 @@ int main()
     cout << endl;
 
     cout << endl;
-    cout << "=====================2.4=====================" << endl;
+    cout << "=====================2.3=====================" << endl;
 
     vector<string> attrs_new, non_attrs_new;
     extract_attrs2(
@@ -123,6 +124,7 @@ int main()
     print_words_new(cout, attrs_new) << endl;
 
     cout << endl;
+    cout << "=====================2.4=====================" << endl;
     cout << "Test words: ";
     print_words_commas_new(cout, test_words) << endl;
     cout << "Attributes: ";
