@@ -28,10 +28,7 @@ T median(std::vector<T> vec)
 
     sort(vec.begin(), vec.end());
 
-    cout << "size: " << size << endl;
-
     const auto mid = size / 2;
-    cout << vec[mid - 1] << endl;
     return size % 2 != 0? vec[mid] : (vec[mid - 1] + vec[mid]) / 2;
 }
 
