@@ -55,47 +55,47 @@ map<string, string> name_amountcomma(vector<string> name, vector<int> amount){
 
 int main(){
 
-    // cout << "======================3.1======================" << endl;
-    // cout << "Enter the list of word and number: ";
-    // vector<string> input;
-    // read_input(cin, input);
-
-    // vector<string> name;
-    // vector<double> amount;
-    // for (const auto& h: input){
-    //     try {
-    //         double x = std::stod(h);
-    //         amount.push_back(x);
-    //     } catch (std::invalid_argument& e){
-    //         name.push_back(h);
-    //     }
-    // }
-
-    // map<string, double> out = name_amount(name, amount);
-    // for (const auto& h: out){
-    //     cout << h.first << " " << h.second << endl;
-    // }
-
-    // cout << endl;
-    cout << "======================3.2======================" << endl;
+    cout << "======================3.1======================" << endl;
     cout << "Enter the list of word and number: ";
     vector<string> input;
     read_input(cin, input);
 
     vector<string> name;
-    vector<int> amount;
+    vector<double> amount;
     for (const auto& h: input){
         try {
-            int x = std::stoi(h);
+            double x = std::stod(h);
             amount.push_back(x);
         } catch (std::invalid_argument& e){
             name.push_back(h);
         }
     }
-    map<string, string> out = name_amountcomma(name, amount);
+
+    map<string, double> out = name_amount(name, amount);
     for (const auto& h: out){
         cout << h.first << " " << h.second << endl;
     }
+
+    // cout << endl;
+    // cout << "======================3.2======================" << endl;
+    // cout << "Enter the list of word and number: ";
+    // vector<string> input;
+    // read_input(cin, input);
+
+    // vector<string> name;
+    // vector<int> amount;
+    // for (const auto& h: input){
+    //     try {
+    //         int x = std::stoi(h);
+    //         amount.push_back(x);
+    //     } catch (std::invalid_argument& e){
+    //         name.push_back(h);
+    //     }
+    // }
+    // map<string, string> out = name_amountcomma(name, amount);
+    // for (const auto& h: out){
+    //     cout << h.first << " " << h.second << endl;
+    // }
 
     return 0;
 }

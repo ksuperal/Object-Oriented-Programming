@@ -46,9 +46,9 @@ int main()
 
     cout << endl;
     cout << "======================1.2======================" << endl;
-    std::vector<int> vec_sample {1, 2, 3, 4, 5, 6, 7, 8, 10, 10, 11, 12, 13, 14, 15, 16};
+    std::vector<int> vec_sample {1, 2, 3, 4, 5, 6, 7, 8, 10, 10, 11, 12, 13, 14, 15};
 
-    cout << median<int>(vec_sample) << endl;
+    cout << "Median: " << median<int>(vec_sample) << endl;
 
     return 0;
 }
