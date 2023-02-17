@@ -1,12 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <list>
-#include <string>
-#include <istream>
-#include <random>
-#include <fstream>
-#include <sstream>
+#include "q3_header.hpp"
 
 using std::cout;
 using std::cin;
@@ -17,33 +9,6 @@ using std::list;
 using std::copy;
 using std::string;
 using std::istream;
-
-void print_words(std::ostream& out, const vector<string>& words){
-    for (const auto& w: words){
-        out << w << endl;
-    }
-}
-
-double map(double x, double in_min, double in_max, double out_min, double out_max){
-    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-}
-
-string hex_random_colour(){
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dis(0, 255);
-    std::string hex = "#";
-    for (int i = 0; i < 3; i++){
-        std::stringstream ss;
-        ss << std::hex << dis(gen);
-        std::string result(ss.str());
-        if (result.size() == 1){
-            result = "0" + result;
-        }
-        hex += result;
-    }
-    return hex;
-}
 
 int main(){
 
@@ -75,22 +40,22 @@ int main(){
     double centerx = 250;
     double centery = 250;
 
-    print_words(cout, head_tag);
+    SVG::print_words(cout, head_tag);
     for (int i = 0; i < N; i++){
         double distance;
         double cx;
         double cy;
-        cx = map(dist(rng), -1, 1, 0, 500);
-        cy = map(dist(rng), -1, 1, 0, 500);
+        cx = SVG::map(dist(rng), -1, 1, 0, 500);
+        cy = SVG::map(dist(rng), -1, 1, 0, 500);
         distance = sqrt(pow(cx - centerx, 2) + pow(cy - centery, 2));
         while (distance > 250){
-            cx = map(dist(rng), -1, 1, 0, 500);
-            cy = map(dist(rng), -1, 1, 0, 500);
+            cx = SVG::map(dist(rng), -1, 1, 0, 500);
+            cy = SVG::map(dist(rng), -1, 1, 0, 500);
             distance = sqrt(pow(cx - centerx, 2) + pow(cy - centery, 2));
         }
-        cout << "<circle cx='" << cx << "' cy='" << cy << "' r='10' fill='" + hex_random_colour() + "' />" << endl;
+        cout << "<circle cx='" << cx << "' cy='" << cy << "' r='10' fill='" + SVG::hex_random_colour() + "' />" << endl;
     }
 
-    print_words(cout, tail_tag);
+    SVG::print_words(cout, tail_tag);
     return 0;
 }
