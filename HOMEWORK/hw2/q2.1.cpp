@@ -1,10 +1,4 @@
-#include <algorithm>
-#include <iomanip>
-#include <iostream>
-#include <stdexcept>
-#include <string>
-#include <vector>
-#include <typeinfo>
+#include "q2_header.hpp"
 
 using std::cout;
 using std::cin;
@@ -18,7 +12,6 @@ struct Scores{
 };
 
 istream& read_hw(istream& in, std::vector<string>& vec){
-
     if (in){
         vec.clear();
 
@@ -30,39 +23,6 @@ istream& read_hw(istream& in, std::vector<string>& vec){
     return in;
 }
 
-double max(const std::vector<double>& vec){
-    double max = 0;
-    for (const auto& h: vec){
-        if (h > max){
-            max = h;
-        }
-    }
-    return max;
-}
-
-double min(const std::vector<double>& vec){
-    double min = 10000;
-    for (const auto& h: vec){
-        if (h < min){
-            min = h;
-        }
-    }
-    return min;
-}
-
-double average(const std::vector<double>& vec){
-    double sum = 0;
-    for (const auto& h: vec){
-        sum += h;
-    }
-    return sum / vec.size();
-}
-
-std::vector<double> sort_acending(const std::vector<double>& vec){
-    std::vector<double> vec2 = vec;
-    std::sort(vec2.begin(), vec2.end());
-    return vec2;
-}
 
 int main(){
     std::vector<string> score;
@@ -122,7 +82,7 @@ int main(){
     
     std::vector<double> max_score;
     for (const auto& h: score_d){
-        max_score.push_back(max(h));
+        max_score.push_back(SCORE::max(h));
     }
 
     std::vector<Scores> max_score_rank;
@@ -135,49 +95,6 @@ int main(){
     });
 
     for (const auto& h: max_score_rank){
-        cout << h.name << ": " << h.score << endl;
-    }
-
-    cout << endl; cout << endl;
-    cout << "=======================2.2========================" << endl;
-    cout << "Min Score ranking" << endl;
-
-    std::vector<double> min_score;
-    for (const auto& h: score_d){
-        min_score.push_back(min(h));
-    }
-
-    std::vector<Scores> min_score_rank;
-    for (int i = 0; i < min_score.size(); i++){
-        min_score_rank.push_back(Scores{min_score[i], score_n[i]});
-    }
-
-    std::stable_sort(min_score_rank.begin(), min_score_rank.end(), [](Scores a, Scores b){
-        return a.score > b.score;
-    });
-
-    for (const auto& h: min_score_rank){
-        cout << h.name << ": " << h.score << endl;
-    }
-
-    cout << endl;
-    cout << "Average Score ranking" << endl;
-
-    std::vector<double> average_score;
-    for (const auto& h: score_d){
-        average_score.push_back(average(h));
-    }
-
-    std::vector<Scores> average_score_rank;
-    for (int i = 0; i < average_score.size(); i++){
-        average_score_rank.push_back(Scores{average_score[i], score_n[i]});
-    }
-
-    std::stable_sort(average_score_rank.begin(), average_score_rank.end(), [](Scores a, Scores b){
-        return a.score > b.score;
-    });
-
-    for (const auto& h: average_score_rank){
         cout << h.name << ": " << h.score << endl;
     }
 
