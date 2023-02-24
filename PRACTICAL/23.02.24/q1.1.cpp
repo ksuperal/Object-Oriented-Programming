@@ -25,7 +25,6 @@ char* rev_dup(const char* s){
 }
 
 char* read_text(std::istream& in){
-    // reads characters from an input stream into a char array that allocate on the free sotre. Read individual characters until '!' is entered
     char* s = new char[1];
     int len = 0;
     char c;
