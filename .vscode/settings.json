@@ -58,7 +58,8 @@
         "xlocmes": "cpp",
         "xtree": "cpp",
         "fstream": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "array": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
