@@ -131,6 +131,10 @@ int main(){
 
     Picture p1 = Picture(data);
     Picture p2 = Picture(data);
+
+    cout << p1.get_width() << endl;
+    cout << p1.get_height() << endl;
+
     p1.print();
 
     p1.hflip();

@@ -29,17 +29,17 @@ string substitute(string text, string word, string rep){
 char* substitute_cstyle(char* text, char* word, char* rep){
 
     int len = 0;
-    while(text[len] != '\0'){
+    while(*(text+len) != '\0'){
         len++;
     }
 
     int word_len = 0;
-    while(word[word_len] != '\0'){
+    while (*(word+word_len) != '\0') {
         word_len++;
     }
 
     int rep_len = 0;
-    while (rep[rep_len] != '\0') {
+    while (*(rep+rep_len) != '\0') {
         rep_len++;
     }
 
@@ -52,7 +52,7 @@ char* substitute_cstyle(char* text, char* word, char* rep){
     while (i < len) {
         bool match = true;
         for (int k = 0; k < word_len; k++) {
-            if (text[i+k] != word[k]) {
+            if (*(text+i+k) != *(word+k)) {
                 match = false;
                 break;
             }
@@ -60,15 +60,17 @@ char* substitute_cstyle(char* text, char* word, char* rep){
 
         if (match) {
             for (int k = 0; k < rep_len; k++) {
-                new_text[j++] = rep[k];
+                *(new_text+j) = *(rep+k);
+                j++;
             }
             i += word_len;
         } else {
-            new_text[j++] = text[i++];
+            *(new_text+j) = *(text+i);
+            i++;
         }
     }
 
-    new_text[j] = '\0';
+    *(new_text+j) = '\0';
 
     return new_text;
 }
