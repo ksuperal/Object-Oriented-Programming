@@ -24,7 +24,7 @@ class Picture{
         }
         ~Picture() {
             for (int i = 0; i < height; i++) {
-                cout << "deleting " << data[i] << endl;
+                // cout << "deleting " << data[i] << endl;
                 delete[] data[i];
             }
             delete[] data;
@@ -77,12 +77,12 @@ class Picture{
         }
 
         int size(char** data){
-        int size = 0;
-        while(data[size] != nullptr){
-            size++;
+            int size = 0;
+            while(data[size] != nullptr){
+                size++;
+            }
+            return size;
         }
-        return size;
-    }
 
         void print(){
             cout << endl;
@@ -90,6 +90,57 @@ class Picture{
             for (int i = 0; i < height; i++) {
                 cout << data[i] << endl;
             }
+        }
+
+        void clear(){
+            for (int i = 0; i < height; i++) {
+                delete[] data[i];
+            }
+            delete[] data;
+            this->height = 0;
+            this->width = 0;
+        }
+
+        void hcat(char** pic2_data){
+            fill_width();
+            int pic2_width = calculate_max_width(pic2_data);
+            int pic2_height = size(pic2_data);
+            int new_width = width + pic2_width;
+            int new_height = height > pic2_height ? height : pic2_height;
+            char** new_data = new char*[new_height];
+            for (int i = 0; i < new_height; i++) {
+                new_data[i] = new char[new_width + 1];
+                new_data[i][new_width] = '\0';
+            }
+            for (int i = 0; i < height; i++) {
+                strncpy(new_data[i], data[i], width);
+            }
+            for (int i = 0; i < pic2_height; i++) {
+                strncpy(new_data[i] + width, pic2_data[i], pic2_width);
+            }
+            clear();
+            this->height = new_height;
+            this->width = new_width;
+            this->data = new_data;
+            fill_width();
+        }
+
+        void fill_width(){
+            // adding ` to the end of each line until it fit the width using new[]
+            for (int i = 0; i < height; i++) {
+                int line_width = strlen(data[i]);
+                if(line_width < width){
+                    char* new_line = new char[width + 1];
+                    new_line[width] = '\0';
+                    strncpy(new_line, data[i], line_width);
+                    for (int j = line_width; j < width; j++) {
+                        new_line[j] = '`';
+                    }
+                    delete[] data[i];
+                    data[i] = new_line;
+                }
+            }
+
         }
 };
 
@@ -109,8 +160,23 @@ int main(){
         nullptr
     };
 
+    char* data2[] = {
+        "```XX``",
+        "``XXXX`",
+        "`XXXXXX",
+        "XXXXXXX",
+        "`XXXXXX",
+        "``XXXX`",
+        "```XX``",
+        nullptr
+    };
+
     Picture p1 = Picture(data);
     cout << p1.get_width() << endl;
     cout << p1.get_height() << endl;
+    p1.print();
+
+    cout << endl << "If the width of 'Hcat' is not equal for two picture, please use cmd to run this program";
+    p1.hcat(data2);
     p1.print();
 }
