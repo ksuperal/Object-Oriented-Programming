@@ -35,17 +35,27 @@ int str_len(char* s){
     return i;
 }
 
-char* encode_hex(const char* s){
-    int len = str_len((char*)s);
-    char* hex = new char[len * 2 + 1];
-    char* it = hex;
-    while(*s){
-        sprintf(it, "%02x", *s);
-        it += 2;
+int strlen(const char* s) {
+    int i = 0;
+    while (*s) {
+        i++;
         s++;
     }
-    *it = '\0';
-    return hex;
+    return i;
+}
+
+char* encode_hex(const char* s) {
+    const char hex[] = "0123456789ABCDEF";
+    const int length = strlen(s);
+    char* encoded = new char[length * 2 + 1];
+
+    for (int i = 0; i < length; i++) {
+        encoded[i * 2] = hex[(s[i] >> 4) & 0xF];
+        encoded[i * 2 + 1] = hex[s[i] & 0xF];
+    }
+
+    encoded[length * 2] = '\0';
+    return encoded;
 }
 
 
@@ -55,19 +65,18 @@ int main(){
 
     inverse_numbers(arr, 3);
 
-    auto* it = arr;
-    while(*it){
-        std::cout << *it << std::endl;
-        it++;
+    for(int i = 0; i < 5; i++){
+        cout << arr[i] << " ";
     }
+    cout << endl;
 
     char str[] = "Hello World!";
     replace(str, 'l', 'x');
     cout << str << endl;
 
-    char* hex = encode_hex("Hello World!");
-    cout << hex << endl;
-    delete[] hex;
+    char* encoded = encode_hex("Hello World!");
+    cout << encoded << endl;
+    delete[] encoded;
 
     return 0;
 }
