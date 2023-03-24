@@ -22,7 +22,7 @@ class Text_base{
         virtual ~Text_base(){}
 
         virtual string text() const{
-            return ori_text;
+            return start + ori_text + end;
         }
 
         virtual unique_ptr<Text_base> clone() const {
@@ -56,7 +56,7 @@ class Crypted_text: public Text_base{
 
         virtual ~Crypted_text(){}
 
-        virtual string text() const{
+        virtual string text() const override{
             string result = "";
             for (int i = 0; i < ori_text.length(); i++){
                 if (ori_text[i] >= 'a' && ori_text[i] <= 'z'){
@@ -99,6 +99,7 @@ class Text {
 };
 
 int main(){
+    cout << "==================2.2==================" << endl;
     Text_base q0("Python", "*");
     auto text = q0.text(); // "Python"
     cout << text << endl;
@@ -127,8 +128,9 @@ int main(){
     text = ct.text(); // "KBgslM101"
     cout << text << endl;
     text = rct.text(); // "KBgslM101"
-    cout << text << endl;
+    cout << text << endl << endl;
 
+    cout << "==================2.3==================" << endl;
     std::vector<Text> words{
         Text("C++", "<i>", "</i>"), // Quoted_text
         Text("Zidane"), // Crypted_text
