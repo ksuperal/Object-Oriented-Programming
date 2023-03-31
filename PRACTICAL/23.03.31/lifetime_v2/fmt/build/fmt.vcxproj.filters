@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\src\format.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\src\os.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\args.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\chrono.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\compile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\format.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\format-inl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\os.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\ostream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\printf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\ranges.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\std.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\include\fmt\xchar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\README.rst" />
+    <None Include="C:\Users\Phoom\Desktop\homework\KMITL\OOP\PRACTICAL\23.03.31\lifetime_v2\build\fmt-9.1.0\ChangeLog.rst" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{A81ABDE7-923B-3D68-8BF8-94C3FF1D84E9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{44071E81-17B7-3FC1-A218-1B85F2B51935}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

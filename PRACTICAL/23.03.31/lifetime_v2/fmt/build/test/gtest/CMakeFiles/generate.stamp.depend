@@ -1,0 +1,8 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.25/Modules/CheckCXXSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/CheckIncludeFileCXX.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.25/Modules/FindThreads.cmake
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/PRACTICAL/23.03.31/lifetime_v2/build/fmt-9.1.0/test/gtest/CMakeLists.txt
