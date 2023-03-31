@@ -55,9 +55,7 @@ int main()
     std::cout << "-----\n\n";
 
     auto tr = Element("tr", std::vector(3, Element("td", {t})));
-    auto tbl = Element(
-        "table", {{"class", "table-1"}, {"selected", true}},
-        {tr, tr, tr});
+    auto tbl = Element("table", {{"class", "table-1"}, {"selected", true}},{tr, tr, tr});
 
     auto title = Element("title", {Element::text("Test #1")});
     auto doc_head = Element("head", {title});

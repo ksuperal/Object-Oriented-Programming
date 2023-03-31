@@ -3,6 +3,7 @@
 #include <vector>
 #include <sstream>
 #include <memory>
+#include <fstream>
 #include "nse/html.hpp"
 #include "nse/ptr.hpp"
 #include "nse/html.cpp"
@@ -134,7 +135,13 @@ class Rectangle: public Shape{
             return os;
         }
 
-        
+        virtual double get_w(){
+            return w;
+        }
+
+        virtual double get_h(){
+            return h;
+        }
 };
 
 int main(){
@@ -147,12 +154,14 @@ int main(){
     auto shape1 = make_unique<Circle>(iss);
     auto shape2 = make_unique<Rectangle>(iss);
 
-    auto circle = Element("circle", {{"cx", to_string(shape1->x)}, {"cy", to_string(shape1->y)}, {"r", to_string(shape1->area())}, {"fill", "blue"}});
-
-    auto rect = Element("rect", {{"x", to_string(shape2->x)}, {"y", to_string(shape2->y)}, {"width", to_string(shape2->area())}, {"height", to_string(shape2->area())}, {"fill", "red"}});
-
-    auto svgs = Element("svg", {{"width", "100"}, {"height", "100"}}, {circle, rect});
     
+
+    auto circle = Element(std::string_view("circle"), {{"cx", std::to_string(shape1->get_x())}, {"cy", std::to_string(shape1->get_y())}, {"r", std::to_string(shape1->get_r())}, {"fill", "red"}}, {Element::text("")});
+
+    auto rect = Element(std::string_view("rect"), {{"x", std::to_string(shape2->get_x())}, {"y", std::to_string(shape2->get_y())}, {"width", std::to_string(shape2->get_w())}, {"height", std::to_string(shape2->get_h())}, {"fill", "blue"}}, {Element::text("")});
+    
+    auto svgs = Element("svg", {{"width", "100"}, {"height", "100"}}, {circle, rect});
+
     auto title = Element("title", {Element::text("Heroes")});
     auto doc_head = Element("head", {title});
     auto doc_body = Element("body", {svgs});
