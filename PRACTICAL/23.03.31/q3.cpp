@@ -144,6 +144,8 @@ class Rectangle: public Shape{
         }
 };
 
+using ShapeVariant = std::variant<Circle, Rectangle>;
+
 int main(){
     using namespace nse::html;
     using Shapeptr = unique_ptr<Shape>;
@@ -151,14 +153,23 @@ int main(){
 
     stringstream iss("C 50 50 15 R 40 40 20 20");
 
-    auto shape1 = make_unique<Circle>(iss);
-    auto shape2 = make_unique<Rectangle>(iss);
+    ShapeVariant shape1 = Circle(iss);
+    ShapeVariant shape2 = Rectangle(iss);
 
-    
+    auto shape_to_element = [](auto& shape, const std::string& fill_color) {
+        using ShapeType = std::decay_t<decltype(shape)>;
 
-    auto circle = Element(std::string_view("circle"), {{"cx", std::to_string(shape1->get_x())}, {"cy", std::to_string(shape1->get_y())}, {"r", std::to_string(shape1->get_r())}, {"fill", "red"}}, {Element::text("")});
+        if constexpr (std::is_same_v<ShapeType, Circle>) {
+            return Element("circle", {{"cx", std::to_string(shape.get_x())}, {"cy", std::to_string(shape.get_y())}, {"r", std::to_string(shape.get_r())}, {"fill", fill_color}}, {Element::text("")});
+        }
+        else if constexpr (std::is_same_v<ShapeType, Rectangle>) {
+            return Element("rect", {{"x", std::to_string(shape.get_x())}, {"y", std::to_string(shape.get_y())}, {"width", std::to_string(shape.get_w())}, {"height", std::to_string(shape.get_h())}, {"fill", fill_color}}, {Element::text("")});
+        }
+    };
 
-    auto rect = Element(std::string_view("rect"), {{"x", std::to_string(shape2->get_x())}, {"y", std::to_string(shape2->get_y())}, {"width", std::to_string(shape2->get_w())}, {"height", std::to_string(shape2->get_h())}, {"fill", "blue"}}, {Element::text("")});
+    Element circle = std::visit([&](auto& shape) { return shape_to_element(shape, "red"); }, shape1);
+
+    Element rect = std::visit([&](auto& shape) { return shape_to_element(shape, "blue"); }, shape2);
     
     auto svgs = Element("svg", {{"width", "100"}, {"height", "100"}}, {circle, rect});
 

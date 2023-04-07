@@ -60,7 +60,8 @@
         "fstream": "cpp",
         "list": "cpp",
         "array": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "cstdarg": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "cmake.sourceDirectory": "c:\\Users\\Phoom\\Desktop\\homework\\KMITL\\OOP\\PRACTICAL\\23.03.31\\lifetime_v2"
