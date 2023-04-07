@@ -230,7 +230,7 @@ try {
             ts_input.putback(t);
 
         expr = expression(ts_input);
-        std::cout << expr.calculate() << std::endl;
+        std::cout << "= " << expr.calculate() << std::endl;
     }
     return 0;
 }
