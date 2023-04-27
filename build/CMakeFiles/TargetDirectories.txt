@@ -1,0 +1,3 @@
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/build/CMakeFiles/test_lifetime.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/build/CMakeFiles/edit_cache.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/build/CMakeFiles/rebuild_cache.dir

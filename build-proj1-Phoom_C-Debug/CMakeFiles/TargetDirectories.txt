@@ -1,0 +1,3 @@
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/build-proj1-Phoom_C-Debug/CMakeFiles/hello.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/build-proj1-Phoom_C-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/build-proj1-Phoom_C-Debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,9 @@
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/HOMEWORK/hw10/simple_calculator/build/CMakeFiles/args.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/HOMEWORK/hw10/simple_calculator/build/CMakeFiles/calc.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/HOMEWORK/hw10/simple_calculator/build/CMakeFiles/calc_expr.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/HOMEWORK/hw10/simple_calculator/build/CMakeFiles/logic2.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/HOMEWORK/hw10/simple_calculator/build/CMakeFiles/edit_cache.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/HOMEWORK/hw10/simple_calculator/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/HOMEWORK/hw10/simple_calculator/build/nse/CMakeFiles/nse_html.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/HOMEWORK/hw10/simple_calculator/build/nse/CMakeFiles/edit_cache.dir
+C:/Users/Phoom/Desktop/homework/KMITL/OOP/HOMEWORK/hw10/simple_calculator/build/nse/CMakeFiles/rebuild_cache.dir
